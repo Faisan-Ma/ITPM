@@ -12,7 +12,7 @@
     <script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
   </head>
 
 <?php
@@ -23,46 +23,48 @@ include("dbconnection.php");
 <div class="wrapper col2">
   <div id="breadcrumb">
     <ul>
-      <li class="first">Medicine Report</li></ul>
+      <li class="first">Admin Report</li>
+    </ul>
   </div>
 </div>
 <div class="wrapper col4">
-  <div id="container">
-<section class="container">
-	<table class="order-table" style="color:black">
-      <thead>
+  <div id="container">  
+  <section class="container">
+    <table class="order-table">
+      <thead style="color:black"> 
         <tr>
-          <th>Medicine name</th>
-          <th>Medicine cost</th>
-          <th>description</th>
-          <th>Status</th>
+          <th><div align="center">Admin Name</div></th>
+          <th><div align="center">Login ID</div></th>
+          <th><div align="center">Status</div></th>
         </tr>
-        </thead> 
-        <button onclick="window.print();" class="btn btn-primary" id="print-btn">Print Report </button>
-        <div class ="container">
-         <p align ="center"></p>
-        </div><br>
-        <tbody>
-        
-    <?php
-		$sql ="SELECT * FROM medicine";
+        </thead>
+        <button onclick="window.print();" class="btn btn-primary" id="print-btn">Print Report</button>
+
+        <div class="container">
+        <p align="center">
+        </p>
+</div><br>
+       <tbody style="color:black">
+       <?php
+		$sql ="SELECT * FROM admin";
 		$qsql = mysqli_query($con,$sql);
 		while($rs = mysqli_fetch_array($qsql))
 		{
         echo "<tr>
-          <td>&nbsp;$rs[medicinename]</td>
-          <td>&nbsp;$rs[medicinecost]</td>
-          <td>&nbsp;$rs[description]</td>
-			 <td>&nbsp;$rs[status]</td>
+          <td>&nbsp;$rs[adminname]</td>
+          <td>&nbsp;$rs[loginid]</td>
+          <td>&nbsp;$rs[status]</td>
         </tr>";
 		}
 		?>
       </tbody>
     </table>
     </section>
+    <p>&nbsp;</p>
   </div>
 </div>
 </div>
  <div class="clear"></div>
   </div>
 </div>
+
